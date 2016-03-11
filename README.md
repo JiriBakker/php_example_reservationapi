@@ -1,8 +1,11 @@
 Couverts PHP example code
 =========================
 
+[Couverts.nl](https://www.couverts.nl?utm_source=github&utm_campaign=examplecode&utm_medium=web) is a restaurant reservation platform. Over 2500 restaurants work with the intelligent digital reservation book that we have developed in-house. The reservation system is tailor-made and therefore perfectly suits the formula of any restaurant, contributing to optimum occupancy. 
+On the B-to-B side, restaurants -more and more- have the need for a fully customised reservation flow on their own website or platform. 
 
-This project should be used as a local working PHP example to build your own reservation form.
+This project consists of the PHP examplecode, which communicates withour reservation-API.
+It can be used as a local working PHP example to build your own reservation form.
 
 If you haven't got your API key / Restaurant ID yet, contact us today at +31 (0)35 711 3000, or by e-mail at developers@couverts.nl. We will generate an API key for you and your restaurant and send it to you immediately, so you can get started as soon as possible!
 
