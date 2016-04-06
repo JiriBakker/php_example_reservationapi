@@ -59,7 +59,7 @@ $basicInfo = $service->GetBasicInfo();
 
     <?php
     try {
-        $response = $service->MakeReservation($reservation);
+        list($reservation, $response) = $service->MakeReservation($reservation);
         ?>
             <div class="col-md-3 col-md-offset-2">
                 <p><?= $response->ConfirmationText->$language ?></p>
