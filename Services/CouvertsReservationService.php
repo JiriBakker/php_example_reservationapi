@@ -43,7 +43,15 @@ class CouvertsReservationService {
         $url = sprintf('%s/Reservation', $this->_baseUrl);
         $response = $this->_getJsonResponse($url, $this->_getPostStreamContext($_reservation));
 
-        return $response;
+        return array($_reservation, $response);
+    }
+
+    private function _mapDate($date) {
+        return array(
+            'Year'  => $date->format("Y"),
+            'Month' => $date->format("m"),
+            'Day'   => $date->format("d")
+        );
     }
 
 
@@ -53,16 +61,17 @@ class CouvertsReservationService {
         $_reservation = $reservation;
         unset($_reservation['DateTime']);
 
-        $_reservation['Date'] = array(
-            'Year'  => $dateTime->format("Y"),
-            'Month' => $dateTime->format("m"),
-            'Day'   => $dateTime->format("d")
-        );
+        $_reservation['Date'] = $this->_mapDate($dateTime);
 
         $_reservation['Time'] = array(
             'Hours'   => $dateTime->format("H"),
             'Minutes' => $dateTime->format("i")
         );
+
+        if(!empty($reservation['BirthDate'])) {
+            $dob = DateTime::createFromFormat("Y-m-d", $reservation['BirthDate']);
+            $_reservation['BirthDate'] = $this->_mapDate($dob);
+        }
 
         return $_reservation;
     }

@@ -39,3 +39,10 @@ Notes
 
 - We consciously did not use a PHP framework, because you may want to include this code in the framework of your own choice and/or to keep this example simple.
 - Instead of using 'file_get_contents' (in ReservationService) you may want to consider using cURL to connect with the API because it makes handling for example response headers a lot easier. We used 'file_get_contents' for compatibility's sake (you may not have cURL installed).
+
+Version information
+-----------
+This code has been tested on
+- PHP 5.5.9 on Ubuntu 14.04
+- PHP 7.0.5 on Ubuntu 14.04
+
